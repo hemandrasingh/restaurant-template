@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Add your custom CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        #text {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            width: 0ch;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: text 5s steps(16) infinite alternate;
+            border-right: 3px solid black;
+            font-size: 70px;
+            text-shadow: 2px 3px 4px black;
+        }
+
+        @keyframes text {
+            0% {
+                width: 0ch;
+            }
+
+            50% {
+                width: 16ch;
+            }
+        }
+
+        .btn-pink {
+            background: #ff0080;
+            color: white;
+        }
+
+        #main {
+            overflow: hidden;
+            height: 350px;
+            width: 100%;
+        }
+
+        #main img {
+            width: 100%;
+            height: 100%;
+            transition: transform 400ms;
+        }
+
+        #main:hover img {
+            transform: scale(1.05);
+        }
+
+        nav {
+            background-color: black;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+        }
+        .img-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .img-hover:hover {
+            transform: scale(1.05);
+        }
+
+        .review-section {
+            background: url('') no-repeat center center;
+            background-size: cover;
+            padding: 100px;
+            text-align: center;
+        }
+
+        .review-title {
+            font-size: 50px;
+            color: darkred;
+        }
+
+        .review-subtitle {
+            color: darkred;
+        }
+
+        footer a:hover {
+            color: #ff0066;
+            text-decoration: underline;
+        }
+        footer a{
+
+            color: white;
+        }
+        footer {
+            padding: 50px 0;
+        }
+
+        .top {
+            position: relative;
+        }
+        .card-img-top.img-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .card-img-top.img-hover:hover {
+            transform: scale(1.05);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        
+        }
+        /* Custom styles go here */
+        .review-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .review-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .review-card h4 {
+            font-size: 18px;
+            color: #ff0066;
+            margin-top: 10px;
+        }
+
+        .review-card p {
+            font-size: 14px;
+            color: #333;
+        }
+        .overlay-container {
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .overlay h1 {
+            font-size: 4rem;
+        }
+
+        .overlay p {
+            font-size: 1.5rem;
+        }
+
+        .overlay a {
+            font-size: 1.5rem;
+        }
+        custom-footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar using Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="logo.jpg" alt="Logo" height="70" width="75">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#expert">EXPERT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">TESTIMONIALS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- top -->
+    <div class="container-fluid overlay-container">
+        <div class="row">
+            <div class="col-12 p-0">
+                <img src="84.jpeg" class="img-fluid" alt="cover" style="width: 100%;">
+                <div class="overlay">
+
+                    <br><br>
+
+                    <h1 class="text-danger display-4 top">Always Choose Good</h1>
+
+                   
+                    <p class="text-white">At the end, we conclude with tips on how to create your own restaurant slogan, including best practices for keeping your tagline short and simple, and ensuring it matches your brand voice.</p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-lg btn-pink" id="about">OUR MENU</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Section -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-black text-center mt-5 ">About Us</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Define your objective. As you'll see in the examples below, descriptions that work for some restaurants would
+                    fall flat for others. A cocktail lounge might want its description to be a call to adventure, while a
+                    sandwich shop might simply want to say it has the lowest prices in town. Define the main thing you want
+                    your audience to know or feel, then use that as a north star to guide your writing.</p>
+            </div>
+            <div class="col-md-6">
+                <p id="menu">Outline key points. Now that you know your objective, write down all the key messages you want to communicate.
+                    Sort them into tiers of importance, and be honest about what is "nice to know" versus what is "need to
+                    know." Digital attention spans are short, so if you try to include every selling point — rather than just
+                    the essentials — readers will gloss over your description. The more information you ask them to retain,
+                    the less they actually will.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <!-- Menu Section -->
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2 class="font-weight-light" style="color: darkred;">Menu</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="img1.jpeg" class="card-img-top img-hover" alt="Special Salads">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Special Salads</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="img2.jpeg" class="card-img-top img-hover" alt="Margherita Pizza">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Margherita Pizza</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="img3.jpeg" class="card-img-top img-hover" alt="Boss Burgers">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Boss Burgers</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Menu Section -->
+
+<div class="container mt-5">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="img4.jpeg" class="card-img-top img-hover" alt="Tomato soup">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tomato soup</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="img5.jpeg" class="card-img-top img-hover" alt="Chole Kulche">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Chole Kulche</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="img6.jpeg" class="card-img-top img-hover" alt="Dal Tadka">
+                <div class="card-body text-center">
+                    <h5 class="card-title" id="expert">Dal Tadka</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- View All Section -->
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <a href="#" class="btn btn-pink">VIEW ALL</a>
+        </div>
+    </div>
+</div>
+
+<!-- Experts Section -->
+
+<div class="container mt-5">
+    <h2 class="text-center font-weight-light" style="color: darkred;">Experts</h2>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="77.jpg" class="card-img-top img-fluid img-hover" alt="Alex Smith">
+                <div class="card-body">
+                    <h5 class="card-title">Alex Smith</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="77.jpg" class="card-img-top img-fluid img-hover" alt="Abdul Rahman">
+                <div class="card-body">
+                    <h5 class="card-title">Abdul Rahman</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="77.jpg" class="card-img-top img-fluid img-hover" alt="Sameer Khan">
+                <div class="card-body">
+                    <h5 class="card-title">Sameer Khan</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 review-section">
+            <h2 class="review-title">Top Reviews</h2>
+            <p class="review-subtitle">Something hot, Something Yummy</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="review-card">
+                <img src="D:\html css\33.jpg" class="img-fluid" alt="Someone Famous">
+                <h4>Someone Famous</h4>
+                <p> The food is worth going back for. I'm thankful for this restaurant and its tasty dishes amid a plethora of pizza joints and diners in the area.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="review-card">
+                <img src="D:\html css\34.jpg" class="img-fluid" alt="Another Celebrity">
+                <h4>Another Celebrity</h4>
+                <p>A great place to enjoy delicious food. I can't wait to visit this restaurant again. The atmosphere and service are exceptional!</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="review-card">
+                <img src="D:\html css\33.jpg" class="img-fluid" alt="Food Critic">
+                <h4>Food Critic</h4>
+                <p>I'm impressed by the quality of food and the pleasant ambiance of this restaurant. Their menu offers a variety of delicious options.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="contact-card">
+                <h2 class="font-weight-light">Contact Us</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us About Yourself</label>
+                        <textarea id="message" class="form-control" placeholder="Tell us about yourself" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-pink btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="contact-image">
+                <img src="D:\html css\Food Website\80.jpg" class="img-fluid" style="box-shadow: 2px 2px 5px black;" alt="Contact Image">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <footer class=" text-white mt-5" id="contact" style="background-color: black;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-white">
+                    <h4>About Us</h4>
+                    <img src="logos.png"style="height:200px; width: 210px; margin-left:-50px;"/>
+                    <p>Your restaurant's story and mission.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Menu</h4>
+                    <ul class="list-unstyled text-white">
+                        <li><a href="#">Breakfast</a></li>
+                        <li><a href="#">Lunch</a></li>
+                        <li><a href="#">Dinner</a></li>
+                        <li><a href="#">Dessert</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact</h4>
+                    <p>123 Vaishali Nagar<br>Ajmer City, Rajesthen<br>305001</p>
+                    <p><a href="tel:+1234567890" class="text-white">Phone: (123) 456-7890</a></p>
+                    <p><a href="mailto:info@example.com" class="text-white">Email: restaurant@taglinegonehere.com</a></p>
+                </div>
+            </div>
+            <div>
+                <div class="col-md-12 text-center">
+                    <a href="#" class="text-white social"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="text-white social"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="text-white social"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="#" class="text-white social"><i class="fab fa-youtube fa-2x"></i></a>
+                    <a href="#" class="text-white social"><i class="fab fa-linkedin fa-2x"></i></a>
+                </div>
+            </div>            
+            </div>
+        </div>
+        <div class="container-fluid">
+            <hr style="background-color: #D4AF37; height: 2px; border-color: #D4AF37">
+        </div>
+    
+        <div class="container-fluid custom-footer">
+            <p>&copy; 2023 Hemandar Singh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
